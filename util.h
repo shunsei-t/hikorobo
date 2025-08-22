@@ -20,3 +20,32 @@
 #define T_SB 6               //Tstandby
 #define FILTER 0             //Filter
 #define SPI3W_EN 0           //3-wire SPI
+
+//#define MEASURING_FREQ (1660)
+#define MEASURING_FREQ (200)
+
+#define OFFSET_SERVO_ELE 0 //
+#define OFFSET_SERVO_AIL_L 0 //
+#define OFFSET_SERVO_AIL_R 0 //
+
+#define TARGET_ROLL 0 //
+#define TARGET_PITCH 0 //
+
+#define KP_ROLL 2.0
+#define KD_ROLL 0.01//0.01オーダー
+#define KI_ROLL 0.1
+
+#define KP_PITCH 1.5
+#define KD_PITCH 0.01//0.01オーダー
+#define KI_PITCH 0.1//1.0-
+
+#define LIMIT_INTEGRAL_ROLL 5.0
+#define LIMIT_INTEGRAL_PITCH 5.0
+
+#define SERVO_SKIP 5
+
+typedef struct {
+  float x;
+  float y;
+  float z;
+} pos3d_t;
