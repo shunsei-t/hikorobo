@@ -45,6 +45,8 @@ void setup() {
   pinMode(PIN_ELE, OUTPUT);
   pinMode(PIN_AIL_L, OUTPUT);
   pinMode(PIN_AIL_R, OUTPUT);
+  pinMode(PIN_LED_1, OUTPUT);
+  pinMode(PIN_LED_2, OUTPUT);
 
   sv_ele.attach(PIN_ELE);
   sv_ail_l.attach(PIN_AIL_L);
@@ -81,12 +83,16 @@ void loop() {
     digitalWrite(LED_B, LOW);
 
     digitalWrite(PIN_SW, HIGH);
+    digitalWrite(PIN_LED_1, HIGH);
+    digitalWrite(PIN_LED_2, LOW);
   } else {
     digitalWrite(LED_R, HIGH);
     digitalWrite(LED_G, LOW);
     digitalWrite(LED_B, LOW);
 
     digitalWrite(PIN_SW, LOW);
+    digitalWrite(PIN_LED_1, LOW);
+    digitalWrite(PIN_LED_2, HIGH);
   }
 
   double temp_act, press_act, hum_act;
@@ -116,8 +122,8 @@ void loop() {
   i++;
   if(i>=SERVO_SKIP){
     sv_ail_l.write(constrain(pid_pitch + 90 + OFFSET_SERVO_AIL_L, 0, 180));
-    sv_ail_r.write(constrain(-pid_pitch + 90 + OFFSET_SERVO_AIL_R, 0, 180));
-    sv_ele.write(constrain(pid_roll + 90 + OFFSET_SERVO_AIL_R, 0, 180));
+    sv_ail_r.write(constrain(pid_pitch + 90 + OFFSET_SERVO_AIL_R, 0, 180));
+    sv_ele.write(constrain(-pid_roll + 90 + OFFSET_SERVO_ELE, 0, 180));
     i = 0;
   }
 

@@ -7,6 +7,8 @@
 #define PIN_AIL_L D7// SV1
 #define PIN_AIL_R D8// SV2
 #define PIN_SW D6
+#define PIN_LED_1 D1
+#define PIN_LED_2 D2
 
 #define PULSE_WIDTH 1500
 
@@ -24,9 +26,9 @@
 //#define MEASURING_FREQ (1660)
 #define MEASURING_FREQ (200)
 
-#define OFFSET_SERVO_ELE 0 //
-#define OFFSET_SERVO_AIL_L 0 //
-#define OFFSET_SERVO_AIL_R 0 //
+#define OFFSET_SERVO_ELE 10 // + で下げ
+#define OFFSET_SERVO_AIL_L 20 //ほんとはR + で上げ
+#define OFFSET_SERVO_AIL_R 0 //ほんとはL + で下げ
 
 #define TARGET_ROLL 0 //
 #define TARGET_PITCH 0 //
